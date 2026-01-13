@@ -1,14 +1,15 @@
 # noast
 
-A cross-platform toast notification CLI application that works on Windows, Mac, WSL, and Linux.
-
-**[日本語版 README](README_ja.md)**
+A cross-platform toast notification CLI application that works on Windows, WSL, Mac and Linux.  
+Windown/WSL/Mac/Linux どれからでも使えるトースト通知用CLIアプリケーションです。  
 
 ## Installation
 
 ```bash
 go install github.com/yashikota/noast@latest
 ```
+
+or [Releases](https://github.com/yashikota/noast/releases)  
 
 ## Usage
 
