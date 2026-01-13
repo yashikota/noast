@@ -1,3 +1,5 @@
+//go:build linux
+
 package main
 
 import (
@@ -52,4 +54,11 @@ func showLinuxNotification(title, message, icon string) error {
 
 	cmd := exec.Command("notify-send", args...)
 	return cmd.Run()
+}
+
+func showNotification(title, message, icon string) error {
+	if isWSL() {
+		return showWSLNotification(title, message, icon)
+	}
+	return showLinuxNotification(title, message, icon)
 }

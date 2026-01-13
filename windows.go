@@ -1,3 +1,5 @@
+//go:build windows
+
 package main
 
 import (
@@ -25,4 +27,8 @@ $notification.Dispose()
 	cmd.SysProcAttr = &syscall.SysProcAttr{HideWindow: true}
 
 	return cmd.Run()
+}
+
+func showNotification(title, message, icon string) error {
+	return showWindowsNotification(title, message, icon)
 }

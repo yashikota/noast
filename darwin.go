@@ -1,3 +1,5 @@
+//go:build darwin
+
 package main
 
 import (
@@ -20,4 +22,8 @@ func showMacNotification(title, message, icon string) error {
 
 	cmd := exec.Command("osascript", "-e", script)
 	return cmd.Run()
+}
+
+func showNotification(title, message, icon string) error {
+	return showMacNotification(title, message, icon)
 }
